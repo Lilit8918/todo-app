@@ -75,9 +75,9 @@ li {
 }
 
 li.done {
-    background-color: #d4edda; /* Light green background */
-    text-decoration: line-through; /* Strikethrough effect */
-    color: #155724; /* Dark green text */
+    background-color: #d4edda; 
+    text-decoration: line-through; 
+    color: #155724; 
 }
 
 button.delete, button.edit {
