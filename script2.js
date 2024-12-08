@@ -1,14 +1,14 @@
-// Select DOM elements for tasks
+
 const taskForm = document.getElementById("taskForm");
 const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
 
-// Select DOM elements for notes
+
 const notesForm = document.getElementById("notesForm");
 const noteInput = document.getElementById("noteInput");
 const notesList = document.getElementById("notesList");
 
-// Add a new task
+
 taskForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const taskText = taskInput.value.trim();
@@ -18,12 +18,12 @@ taskForm.addEventListener("submit", (e) => {
     }
 });
 
-// Add a new note
+
 notesForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const noteText = noteInput.value.trim();
     if (noteText) {
-        createTask(noteText, notesList); // Reusing the same function for notes
+        createTask(noteText, notesList); 
         noteInput.value = ""; // Clear input
     }
 });
@@ -39,7 +39,7 @@ function createTask(itemText, list) {
         </div>
     `;
 
-    // Toggle "done" class on click
+
     li.querySelector("span").addEventListener("click", () => toggleDone(li));
 
     // Add event listeners for Edit and Delete buttons
@@ -49,12 +49,12 @@ function createTask(itemText, list) {
     list.appendChild(li);
 }
 
-// Toggle the "done" class
+
 function toggleDone(item) {
     item.classList.toggle("done");
 }
 
-// Edit a task or note
+
 function editTask(item) {
     const itemText = item.querySelector("span").textContent;
     const newText = prompt("Edit your item:", itemText);
@@ -63,7 +63,7 @@ function editTask(item) {
     }
 }
 
-// Delete a task or note
+
 function deleteTask(item) {
     item.parentElement.removeChild(item);
 }
